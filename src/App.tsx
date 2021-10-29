@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from 'react-router';
 import Login from './components/Login';
 import Photo from './components/Photo';
 import Search from './components/Search';
+import PhotoDetail from './components/PhotoDetail';
 
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
     <div className="ms-Grid" dir="ltr">
     <Redirect to="/login" />
     <Route path="/login" component={Login} />
-    <Route path="/photo" component={Photo} />
+    <Switch>
+     <Route path="/photo/edit/:photoId" exact component={PhotoDetail} />
+     <Route path="/photo" component={Photo} />
+    </Switch>
     <Route path="/search" component={Search} />
     </div>
     </>

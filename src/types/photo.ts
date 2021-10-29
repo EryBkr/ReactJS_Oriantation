@@ -30,6 +30,24 @@ export interface GET_PHOTO_ERROR{
     type:"GET_PHOTO_ERROR";
   }
 
-  export type PhotoAction=GET_PHOTO_START | GET_PHOTO_SUCCESS | GET_PHOTO_ERROR;
+  export interface GET_BY_ID_PHOTO_START{
+    type:"GET_BY_ID_PHOTO_START";
+  }
+  
+export interface GET_BY_ID_PHOTO_SUCCESS{
+    type:"GET_BY_ID_PHOTO_SUCCESS";
+    payload:Photo;
+  }
+  
+export interface GET_BY_ID_PHOTO_ERROR{
+    type:"GET_BY_ID_PHOTO_ERROR";
+  }
+
+  export type PhotoAction=GET_PHOTO_START 
+  | GET_PHOTO_SUCCESS 
+  | GET_PHOTO_ERROR
+  | GET_BY_ID_PHOTO_START
+  | GET_BY_ID_PHOTO_SUCCESS
+  | GET_BY_ID_PHOTO_ERROR;
 
   export type PhotoDispatch=ThunkDispatch<PhotoState,void,PhotoAction>;
